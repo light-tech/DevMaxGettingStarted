@@ -1,0 +1,54 @@
+{
+"version":1,
+"name":"Getting Started with DevMax",
+"build_commands": {
+	"CompileC++" : {
+		"action":"compile",
+		"args":["-fms-extensions", "-fms-compatibility", "-x", "c++", "-std=c++14", "-w"],
+		"sys_include_dir":["ucrt", "msvc"],
+		"include_dir":[""]
+	},
+	"MakeExe" : {
+		"action":"link",
+		"args":["/defaultlib:msvcrt.lib", "/subsystem:Console"],
+		"sys_lib_dir":["msvc", "winsdk"]
+	},
+	"InterpretCC++" : {
+		"action":"interpret",
+		"args":["-x", "c++", "-std=c++14", "-D", "_DEVMAX_INTERPRETER_"],
+		"unused_args":["-fms-compatibility-version=19.10.25017", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions"],
+		"sys_include_dir":["ucrt", "msvc"],
+		"include_dir":[""]
+	}
+},
+"build_definitions": [
+	{
+		"name":"Interpret Hello World",
+		"build_steps": [
+			{
+				"command":"InterpretCC++",
+				"inputs":["HelloWorld.cpp"]
+			}
+		]
+	},
+	{
+		"name":"Compile program",
+		"build_steps": [
+			{
+				"command":"CompileC++",
+				"inputs":["HelloWorld.cpp"]
+			}
+		]
+	},
+	{
+		"name":"Build executable",
+		"build_steps": [
+			{
+				"command":"MakeExe",
+				"inputs":["HelloWorld.o"],
+				"output":"HelloWorld.exe"
+			}
+		]
+	}
+]
+}
