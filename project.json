@@ -32,6 +32,15 @@
 		]
 	},
 	{
+		"name":"Interpret Sort",
+		"build_steps": [
+			{
+				"command":"InterpretCC++",
+				"inputs":["Sort.cpp"]
+			}
+		]
+	},
+	{
 		"name":"Compile program",
 		"build_steps": [
 			{

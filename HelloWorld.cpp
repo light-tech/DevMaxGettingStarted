@@ -1,3 +1,11 @@
+/**
+ * Standard hello world program.
+ *
+ * Author: Lightech (lightech@outlook.com)
+ *
+ * Public Domain.
+ */
+
 #include "DevMax.h"
 
 int main(int argc, const char **argv)
