@@ -10,7 +10,7 @@ The key files included are:
  * [`HelloWorld.cpp`](HelloWorld.cpp): Standard program to illustrate outputing text to DevMax's console.
  * [`project.json`](project.json): DevMax project file with basic features like reusable commands which you can modify to suit your project.
 
-![Screenshot](screenshot.png)
+![Hello World Interpretation Screenshot](Screenshot.PNG)
 
 DevMax Interpreter API
 ----------------------
