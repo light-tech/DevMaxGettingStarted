@@ -3,13 +3,13 @@ Getting Started with DevMax
 
 This repository provides an example project configuration to get you started software development with [DevMax IDE](https://www.microsoft.com/en-us/p/devmax/9mzqlt5d5b39) and its sister app C++ Compiler.
 
-If you do not have C++ Compiler installed yet, head over to [our C++ Compiler project](https://github.com/light-tech/UniversalCppCompiler) for installation instructions.
-
 This tutorial will cover
 
  1. Where to place your projects so that they can be compiled/interpreted.
  2. The structure of a project folder.
  3. The interpreter API and standard C/C++ functions that you can use in your program.
+
+Before we begin, if you do not have C++ Compiler installed yet, head over to [our C++ Compiler project](https://github.com/light-tech/UniversalCppCompiler) for installation instructions.
 
 ![Hello World Interpretation Screenshot](Screenshot.PNG)
 
@@ -27,6 +27,8 @@ The easiest way to get started is to clone this repository
 in the opened folder `C++Projects`.
 
 __Tip:__ It is a good idea to make a shortcut to this folder on the desktop so that you can have quick access to your projects.
+
+__WARNING:__ All files in the `C++Projects` folder will be deleted if both DevMax and C++ Compiler are uninstalled. Make sure to always back up your data or better yet, always use a remote Git repo in your development.
 
 Project folder structure
 ------------------------
@@ -56,6 +58,6 @@ For instance, simply declare
 
     extern "C" void *malloc(unsigned int);
 
-and then use `malloc` as if you included `<stdlib.h>`. See the header [`DevMax.h`](DevMax.h) for examples of how to do this declaration properly. To see this in action, interpret [Sort.cpp](Sort.cpp).
+and then use `malloc` as if you included `<stdlib.h>`. See the header [`DevMax.h`](DevMax.h) for examples of how to do this declaration properly. To see this in action, interpret the [Sort.cpp](Sort.cpp) program.
 
 At the moment, we do not yet support C++ standard library due to its significant dependency of the internal implementation.
