@@ -60,4 +60,6 @@ For instance, simply declare
 
 and then use `malloc` as if you included `<stdlib.h>`. See the header [`DevMax.h`](DevMax.h) for examples of how to do this declaration properly. To see this in action, interpret the [Sort.cpp](Sort.cpp) program.
 
+__Exercise:__ Combining DevMax's `PrintString` and standard C's `sprintf`, implement the function `PrintFormatString` which mimics `printf` but outputs to DevMax's console instead. _Solution_: See the header [`DevMax.h`](DevMax.h).
+
 At the moment, we do not yet support C++ standard library due to its significant dependency of the internal implementation.
