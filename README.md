@@ -34,7 +34,7 @@ Project folder structure
 ------------------------
 
 The key files are:
- * [`project.json`](project.json): DevMax project file with basic features like reusable commands which you can modify to suit your project. This is a human-readable [JSON file](https://en.wikipedia.org/wiki/JSON). This file is necessary.
+ * [`project.json`](project.json): DevMax project file with basic features like reusable commands which you can modify to suit your project. This is a human-readable [JSON file](https://en.wikipedia.org/wiki/JSON). This file is necessary. See [here](https://github.com/light-tech/UniversalCppCompiler/blob/master/PROJECT_FILE_SPEC.md) for the specification of this file.
  * [`DevMax.h`](DevMax.h): Our standard interpreter API to allow communication between an interpreted program and DevMax IDE. (See the next section for its purpose.)
  * The source files, for example [`HelloWorld.cpp`](HelloWorld.cpp), the standard program to illustrate outputing text to DevMax's console. It is up to you to structure your own source code, but the correct location needs to be reflected in the project file.
 
