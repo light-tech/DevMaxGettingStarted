@@ -28,6 +28,8 @@ in the opened folder `C++Projects`.
 
 __Tip:__ It is a good idea to make a shortcut to this folder on the desktop so that you can have quick access to your projects.
 
+At this point, you can go back to DevMax, click on the _Open project_ button and select `DevMaxGettingStarted` from the pop-up dialog to open this example project. Try interpreting the "Hello World" program (in _Project_ tab) and press `Ctrl + D` to open the output console to see the expected output.
+
 __WARNING:__ All files in the `C++Projects` folder will be deleted if both DevMax and C++ Compiler are uninstalled. Make sure to always back up your data or better yet, always use a remote Git repo in your development.
 
 Project folder structure
