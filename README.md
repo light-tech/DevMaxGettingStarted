@@ -62,4 +62,20 @@ and then use `malloc` as if you included `<stdlib.h>`. See the header [`DevMax.h
 
 __Exercise:__ Combining DevMax's `PrintString` and standard C's `sprintf`, implement the function `PrintFormatString` which mimics `printf` but outputs to DevMax's console instead. _Solution_: See the header [`DevMax.h`](DevMax.h).
 
-At the moment, we do not yet support C++ standard library due to its significant dependency of the internal implementation.
+__Exercise:__ Research the reason it is not a good idea to use `printf` in practice. _Hint:_ (i) Most `printf` are for debugging so there's a need to easily turn on/off these redundant code; (ii) Type safety/security issue; (iii) Hard to remember the format specification; for example `double` or `int64_t`; (iv) Performance: Think about how you would implement `printf` yourself bearing in mind that it is much more efficient to output a long string than individual characters to the console.
+
+Standard C++ API
+----------------
+
+At the moment, concerning the __interpreter__, we do not yet support C++ standard library due to its significant dependency of the internal implementation and there are also limitations to the C++ language.
+
+__Exercise:__ The C++ preferred method of textual output is via `iostream` which one could turn on/off easily:
+```C++
+// Initialize to std::cout or std:cerr when debugging
+// and something like /dev/null when releasing (or write to a debug file
+// if you want to allow users to send you debug log for debugging).
+std::ostream debug_out;
+```
+Implement `std::cout` using `PrintString`.
+
+__Exercise:__ Implement `std::vector` or test out an open source implementation.

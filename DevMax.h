@@ -35,7 +35,7 @@
 	}
 #else
 	// When not interpreted, use printf to output.
-	#define PrintString(s) printf("%s", (s));
+	#define PrintString(s) fputs((s), stdout);
 #endif
 
 /*
