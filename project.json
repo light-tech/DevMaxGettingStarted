@@ -4,20 +4,20 @@
 "build_commands": {
 	"CompileC++" : {
 		"action":"compile",
-		"args":["-fms-extensions", "-fms-compatibility", "-x", "c++", "-std=c++14", "-w"],
-		"sys_include_dir":["ucrt", "msvc"],
+		"args":["-fms-extensions", "-fms-compatibility", "-x", "c++", "-std=c++14", "-w", "-fcolor-diagnostics"],
+		"sys_include_dir":["winsdk/ucrt", "msvc"],
 		"include_dir":[""]
 	},
 	"MakeExe" : {
 		"action":"link",
 		"args":["/defaultlib:msvcrt.lib", "/subsystem:Console"],
-		"sys_lib_dir":["msvc", "winsdk"]
+		"sys_lib_dir":["msvc/x86", "winsdk/ucrt/x86", "winsdk/um/x86"]
 	},
 	"InterpretCC++" : {
 		"action":"interpret",
 		"args":["-x", "c++", "-std=c++14", "-D", "_DEVMAX_INTERPRETER_"],
 		"unused_args":["-fms-compatibility-version=19.10.25017", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions"],
-		"sys_include_dir":["ucrt", "msvc"],
+		"sys_include_dir":["winsdk/ucrt", "msvc"],
 		"include_dir":[""]
 	}
 },
