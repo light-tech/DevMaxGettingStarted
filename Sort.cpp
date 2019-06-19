@@ -6,13 +6,7 @@
  * Public Domain.
  */
 
-#ifdef _DEVMAX_INTERPRETER_
-extern "C" int printf(const char* format, ...);
-#else
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#endif
-
 #include <stdlib.h>
 
 void PrintArray(int *A, int n)

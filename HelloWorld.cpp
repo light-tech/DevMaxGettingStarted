@@ -6,12 +6,10 @@
  * Public Domain.
  */
 
-#ifdef _DEVMAX_INTERPRETER_
-extern "C" int printf(const char* format, ...);
-#else
-#define _CRT_SECURE_NO_WARNINGS
+// When interpreting, one can #define _CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS
+// (see $WIN_SDK\ucrt\corecrt_stdio_config.h lines 47-71) to avoid LLVM
+// invalid linker options.
 #include <stdio.h>
-#endif
 
 int main(int argc, const char **argv)
 {
