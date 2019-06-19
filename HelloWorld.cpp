@@ -6,11 +6,15 @@
  * Public Domain.
  */
 
-#include "DevMax.h"
+#ifdef _DEVMAX_INTERPRETER_
+extern "C" int printf(const char* format, ...);
+#else
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#endif
 
 int main(int argc, const char **argv)
 {
-	// DevMax's API to print to output console
-	PrintString("Hello world!");
+	printf("Hello world!\n");
 	return 0;
 }

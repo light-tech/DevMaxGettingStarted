@@ -6,23 +6,28 @@
  * Public Domain.
  */
 
-#include "DevMax.h"
+#ifdef _DEVMAX_INTERPRETER_
+extern "C" int printf(const char* format, ...);
+#else
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#endif
 
-typedef unsigned int size_t;
-extern "C" void qsort(void* base, size_t num, size_t size, int (*compar)(const void*,const void*));
+#include <stdlib.h>
 
 void PrintArray(int *A, int n)
 {
 	for(int i = 0; i < n; i++)
-		PrintFormatString("%d ", A[i]);
-	PrintString("\n");
+		printf("%d ", A[i]);
+	printf("\n");
 }
 
 int main(int argc, const char **argv)
 {
+	printf("Sorting\n");
 	int A[] = {9, -1, 3, 4, 7, -3, -2, 8};
 	int n = sizeof(A) / sizeof(int);
-	PrintString("Original array: ");
+	printf("Original array: ");
 	PrintArray(A, n);
 	qsort(A, n, sizeof(int), [](const void *x, const void *y)
 	{
@@ -30,7 +35,7 @@ int main(int argc, const char **argv)
 		int b = *(int*)y;
 		return a - b;
 	});
-	PrintString("Sorted array: ");
+	printf("Sorted array: ");
 	PrintArray(A, n);
 
 	return 0;

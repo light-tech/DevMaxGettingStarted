@@ -4,7 +4,7 @@
 "build_commands": {
 	"CompileC++" : {
 		"action":"compile",
-		"args":["-fms-extensions", "-fms-compatibility", "-x", "c++", "-std=c++14", "-w", "-fcolor-diagnostics"],
+		"args":["-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19", "-x", "c++", "-std=c++14"],
 		"sys_include_dir":["winsdk/ucrt", "msvc"],
 		"include_dir":[""]
 	},
@@ -15,7 +15,7 @@
 	},
 	"InterpretCC++" : {
 		"action":"interpret",
-		"args":["-x", "c++", "-std=c++14", "-D", "_DEVMAX_INTERPRETER_"],
+		"args":["-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19", "-x", "c++", "-std=c++14", "-w", "-D", "_DEVMAX_INTERPRETER_"],
 		"unused_args":["-fms-compatibility-version=19.10.25017", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions"],
 		"sys_include_dir":["winsdk/ucrt", "msvc"],
 		"include_dir":[""]
@@ -41,7 +41,7 @@
 		]
 	},
 	{
-		"name":"Compile program",
+		"name":"Compile Hello World",
 		"build_steps": [
 			{
 				"command":"CompileC++",
@@ -50,12 +50,45 @@
 		]
 	},
 	{
-		"name":"Build executable",
+		"name":"Build Hello World",
 		"build_steps": [
 			{
 				"command":"MakeExe",
 				"inputs":["HelloWorld.o"],
 				"output":"HelloWorld.exe"
+			}
+		]
+	},
+	{
+		"name":"Build Sort",
+		"build_steps": [
+			{
+				"command":"CompileC++",
+				"inputs":["Sort.cpp"]
+			},
+			{
+				"command":"MakeExe",
+				"inputs":["Sort.o"],
+				"output":"Sort.exe"
+			}
+		]
+	},
+	{
+		"name":"Build All",
+		"build_steps": [
+			{
+				"command":"CompileC++",
+				"inputs":["HelloWorld.cpp", "Sort.cpp"]
+			},
+			{
+				"command":"MakeExe",
+				"inputs":["HelloWorld.o"],
+				"output":"HelloWorld.exe"
+			},
+			{
+				"command":"MakeExe",
+				"inputs":["Sort.o"],
+				"output":"Sort.exe"
 			}
 		]
 	}
