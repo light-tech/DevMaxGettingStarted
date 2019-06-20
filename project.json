@@ -5,19 +5,19 @@
 	"CompileC++" : {
 		"action":"compile",
 		"args":["-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19", "-x", "c++", "-std=c++14"],
-		"sys_include_dir":["winsdk/ucrt", "msvc"],
+		"sys_include_dir":["C:/MSCpp/include/winsdk/ucrt", "C:/MSCpp/include/msvc"],
 		"include_dir":[""]
 	},
 	"MakeExe" : {
 		"action":"link",
 		"args":["/defaultlib:msvcrt.lib", "/subsystem:Console"],
-		"sys_lib_dir":["msvc/x86", "winsdk/ucrt/x86", "winsdk/um/x86"]
+		"sys_lib_dir":["C:/MSCpp/lib/msvc/x86", "C:/MSCpp/lib/winsdk/ucrt/x86", "C:/MSCpp/lib/winsdk/um/x86"]
 	},
 	"InterpretCC++" : {
 		"action":"interpret",
 		"args":["-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19", "-x", "c++", "-std=c++14", "-D", "_DEVMAX_INTERPRETER_", "-D", "_CRT_SECURE_NO_WARNINGS", "-D", "_CRT_STDIO_ARBITRARY_WIDE_SPECIFIERS"],
 		"unused_args":["-fms-compatibility-version=19.10.25017", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions"],
-		"sys_include_dir":["winsdk/ucrt", "msvc"],
+		"sys_include_dir":["C:/MSCpp/include/winsdk/ucrt", "C:/MSCpp/include/msvc"],
 		"include_dir":[""]
 	}
 },
